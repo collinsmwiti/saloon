@@ -1,0 +1,40 @@
+<h1>Welcome!</h1>
+
+<h2> All Stylists: </h2>
+
+#if($stylists)
+  <p>Click on a stylist to see their clients:</p>
+  <ul>
+    #foreach ($stylist in $stylists)
+      <li><a href="/stylists/$stylist.getId()">$stylist.getDescription()</a></li>
+    #end
+  </ul>
+#else
+  <p>There are no stylists yet!</p>
+#end
+
+<h2>New Stylist:</h2>
+
+<form action="/stylists" method="post">
+  <label for="description">Stylist name</label>
+  <input id="description" name="description" type="text">
+  <button type="submit" class="btn btn-success">Add Stylist</button>
+</form>
+
+<h2>New Client:</h2>
+
+<form action="/clients" method="post">
+<label for="stylistId">Select a List</label>
+<select id='stylistId' name='stylistId' type='text'>
+#foreach($stylist in $stylists)
+  <option value="$stylist.getId()">$stylist.getDescription()</option>
+#end
+</select>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input id="description" name="description" type="text" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-success">Add Client</button>
+</form>
