@@ -8,7 +8,6 @@ import org.sql2o.*;
 public class Client {
   private String description;
   private boolean completed;
-  private LocalDateTime createdAt;
   private int id;
   private int stylistId;
 
@@ -16,7 +15,6 @@ public class Client {
   public Client(String description, int stylistId) {
     this.description = description;
     completed = true;
-    createdAt = LocalDateTime.now();
     this.stylistId = stylistId;
   }
 
@@ -28,11 +26,6 @@ public class Client {
 // constructor to check if the client has been hairdressed successfully
     public boolean isCompleted() {
       return completed;
-    }
-
-// constructor to show the time the services has been done to the client
-    public LocalDateTime getCreatedAt() {
-      return createdAt;
     }
 
 // constructor to get ids of the clients

@@ -2,6 +2,7 @@
 import org.sql2o.*;
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.time.LocalDateTime;
 
 //class client test
 public class ClientTest {
@@ -65,7 +66,7 @@ public class ClientTest {
 // test used to enhance relationship between parent-class stylist and child-class client
 @Test
     public void save_savesStylistIdIntoDB_true() {
-      Stylist myStylist = new Stylist("Caroline");
+      Stylist myStylist = new Stylist("Caroline", "image");
       myStylist.save();
       Client myClient = new Client("June", myStylist.getId());
       myClient.save();

@@ -7,10 +7,12 @@ import org.sql2o.*;
 public class Stylist {
   private String description;
   private int id;
+  private String image;
 
 // constructor stylist
-public Stylist(String description) {
+public Stylist(String description, String image) {
   this.description = description;
+  this.image = image;
   }
 
 // used to return the description of the stylist
@@ -18,9 +20,14 @@ public Stylist(String description) {
        return description;
      }
 
+// used to return the description of the stylist
+     public String getImage() {
+      return image;
+      }
+
 // to return list of the stylists within the database
      public static List<Stylist> all() {
-       String sql = "SELECT id, description FROM stylists";
+       String sql = "SELECT id, description, image FROM stylists";
        try(Connection con = DB.sql2o.open()) {
          return con.createQuery(sql).executeAndFetch(Stylist.class);
        }
@@ -60,6 +67,7 @@ public static Stylist find(int id) {
     } else {
       Stylist newStylist = (Stylist) otherStylist;
       return this.getDescription().equals(newStylist.getDescription()) &&
+            this.getImage().equals(newStylist.getImage()) &&
             this.getId() == newStylist.getId();
     }
   }
@@ -67,12 +75,35 @@ public static Stylist find(int id) {
 //method for saving stylists in the database
 public void save() {
       try(Connection con = DB.sql2o.open()) {
-        String sql = "INSERT INTO stylists(description) VALUES (:description)";
+        String sql = "INSERT INTO stylists(description, image) VALUES (:description, :image)";
         this.id = (int) con.createQuery(sql, true)
           .addParameter("description", this.description)
+          .addParameter("image", this.image)
           .executeUpdate()
           .getKey();
       }
     }
+
+    //update methods
+        public void update(String description, String image) {
+          try(Connection con = DB.sql2o.open()) {
+            String sql = "UPDATE stylists SET (description, image)= (:description, :image) WHERE id = :id";
+            con.createQuery(sql)
+            .addParameter("description", description)
+            .addParameter("image", image)
+            .addParameter("id", id)
+            .executeUpdate();
+          }
+        }
+
+    // delete methods
+        public void delete() {
+          try(Connection con = DB.sql2o.open()) {
+            String sql = "DELETE FROM stylists WHERE id = :id;";
+            con.createQuery(sql)
+            .addParameter("id", id)
+            .executeUpdate();
+          }
+        }
 
    }

@@ -1,14 +1,16 @@
-<h1>Welcome!</h1>
+<h1 style="text-align:center">Welcome!</h1>
 
-<h2> All Stylists: </h2>
+<h2 style="text-align:center"> All Stylists: </h2>
 
 #if($stylists)
   <p>Click on a stylist to see their clients:</p>
-  <ul>
+<div id="stylists">
     #foreach ($stylist in $stylists)
-      <li><a href="/stylists/$stylist.getId()">$stylist.getDescription()</a></li>
+      <div class="stylist-thumbnail">
+      <a href="/stylists/$stylist.getId()"><img class="img-thumbnail" src="$stylist.getImage()" alt="Stylist Picture" width="250" height="146" > <br> $stylist.getDescription()</a>
+      </div>
     #end
-  </ul>
+  </div>
 #else
   <p>There are no stylists yet!</p>
 #end
@@ -16,8 +18,11 @@
 <h2>New Stylist:</h2>
 
 <form action="/stylists" method="post">
+<label for="image">Profile Picture</label>
+<input id="image" name="image" type="text" placeholder="profile-pic">
+<br>
   <label for="description">Stylist name</label>
-  <input id="description" name="description" type="text">
+  <input id="description" name="description" type="text" placeholder="name">
   <button type="submit" class="btn btn-success">Add Stylist</button>
 </form>
 
@@ -33,7 +38,7 @@
 
   <div class="form-group">
     <label for="description">Description</label>
-    <input id="description" name="description" type="text" class="form-control">
+    <input id="description" name="description" type="text" class="form-control" placeholder="name">
   </div>
 
   <button type="submit" class="btn btn-success">Add Client</button>

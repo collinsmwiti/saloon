@@ -1,0 +1,17 @@
+<h1>Available Clients!</h1>
+#if(!$stylists)
+  <h4>There Are Currently No Available Clients</h4>
+#else
+  <form action="/stylist-page" method="post">
+    #foreach($stylist.getDescription() in $stylist)
+      <p class="stylist">
+        <label for=$stylist.getDescription()>
+        <input type="description" name="description" value=$stylist.getId()>
+          $stylist.getDescription()
+        </label>
+      </p>
+    #end
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+#end
+<a href="/clients/new">Add New Client</a>

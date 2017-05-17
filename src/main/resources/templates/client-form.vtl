@@ -3,6 +3,12 @@
 <p>Add a new client here:</p>
 
 <form action="/clients" method="post">
+<label for="stylistId">Select a List</label>
+<select id='stylistId' name='stylistId' type='text'>
+#foreach($stylist in $stylists)
+  <option value="$stylist.getId()">$stylist.getDescription()</option>
+#end
+</select>
   <label for="description">Client name</label>
   <input id="description" name="description" type="text">
 

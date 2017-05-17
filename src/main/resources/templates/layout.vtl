@@ -1,13 +1,150 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Hair Saloon</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
   <link rel='stylesheet' href='/app.css'>
 </head>
+
 <body>
+  <!--navbar-->
+  <nav id="header" class="navbar navbar-fixed-top" style="background-color: blue;">
+    <div id="header-container" class="container navbar-container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+        <a id="brand" class="navbar-brand" href="#" height="60px" width="60px">Silver wolf saloon</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
   <div class="container">
     #parse( $template )
   </div>
 </body>
+
+<footer id="footer" class="clearfix">
+  <div id="footer-widgets">
+
+    <div class="container">
+
+      <div id="footer-wrapper">
+
+        <div class="row">
+          <div class="col-sm-6 col-md-2">
+            <div id="meta-3" class="widget widgetFooter widget_meta">
+              <h4 class="widgettitle">Important Page :</h4>
+              <ul>
+                <li><a href="/"><i class="fa fa-home fa-fw"></i> Home</a></li>
+                <li><a href="/about"><i class="fa fa-link"></i>About</a></li>
+                <li><a href="/contact"><i class="fa fa-envelope fa-fw"></i> Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end widget1 -->
+
+          <div class="col-sm-6 col-md-2">
+            <div id="recent-posts-3" class="widget widgetFooter widget_recent_entries">
+              <h4 class="widgettitle">Our social media :</h4>
+              <ul>
+                <li>
+                  <a href="https://m.facebook.com/?stype=lo&jlou=Afe9xLt56uPi5IBDXfII7NHcGfjRG258jXtAEvSDClna5cupyMteSEa2C4SWs4bv_cScZJ-c1CN8p4AffnnPexGcgNtWghKhA-gLIs1goqxiyg&smuh=24502&lh=Ac-YVwHgQoNocDWO&_rdr" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/download?logged_out=1&lang=en" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i>Instagram</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- end widget1 -->
+
+          <div class="col-sm-6 col-md-4">
+            <div id="meta-4" class="widget widgetFooter widget_meta">
+              <h4 class="widgettitle">Subscribe :</h4>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">E-mail :</span>
+                  <input class="form-control" placeholder="Write your email .." type="text">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Phone  :</span>
+                  <input class="form-control" placeholder="place your number" type="text">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Subscribe !</button>
+                  </span>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <!-- end widget1 -->
+
+          <div class="col-sm-6 col-md-4">
+            <div id="search-3" class="widget widgetFooter widget_search">
+              <h4 class="widgettitle">Search in Silver wolf saloon :</h4>
+
+              <div class="form-group">
+                <label class="control-label">Write what you want to search for it  :</label>
+                <div class="input-group">
+                  <span class="input-group-addon">Keyword :</span>
+                  <input class="form-control" placeholder="Keyword for search ..." type="text">
+                  <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">Search !</button>
+                                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- end widget1 -->
+
+        </div>
+        <!-- end .row -->
+
+      </div>
+      <!-- end #footer-wrapper -->
+
+    </div>
+    <!-- end .container -->
+  </div>
+  <!-- end #footer-widgets -->
+
+  <div id="sub-floor">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 copyright">
+          Copyright Silver wolf saloon &#xA9; 2017
+        </div>
+        <div class="col-md-4 col-md-offset-4 attribution">
+          Developer by Collins Mwiti</a> .
+        </div>
+      </div>
+      <!-- end .row -->
+    </div>
+  </div>
+
+</footer>
+
 </html>
